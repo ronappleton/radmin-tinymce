@@ -23,7 +23,9 @@ class ModuleServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->alias('tinymce', TinyMceBuilder::class);
+        $this->app->bind('tinymce', function () {
+            return new TinyMceBuilder();
+        });
     }
 
     public function boot()
@@ -35,7 +37,7 @@ class ModuleServiceProvider extends ServiceProvider
     private function publishTinyMce()
     {
         $this->publishes([
-           $this->packagePath('/public/vendor/tinymce') => public_path('/vendor/tinymce'),
+            $this->packagePath('/public/vendor/tinymce') => public_path('/vendor/tinymce'),
         ]);
     }
 
