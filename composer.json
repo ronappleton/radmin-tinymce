@@ -24,6 +24,7 @@
                 "RonAppleton\\Radmin\\TinyMce\\ModuleServiceProvider"
             ],
             "aliases": {
+                "TinyMce": "RonAppleton\\Radmin\TinyMce\\Facades\\TinyMceFacade"
             }
         }
     },
