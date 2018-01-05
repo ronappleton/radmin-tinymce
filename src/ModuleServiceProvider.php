@@ -41,6 +41,16 @@ class ModuleServiceProvider extends ServiceProvider
         ]);
     }
 
+    private function publishFileManager()
+    {
+        $this->publishes([
+            $this->packagePath('/public/filemanager') => public_path('/filemanager'),
+        ]);
+        $this->publishes([
+            $this->packagePath('/public/thumbs') => public_path('/vendor/thumbs'),
+        ]);
+    }
+
     private function publishConfig()
     {
         $this->publishes([

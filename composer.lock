@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a84471c60ae5a9067b68bddcdf5e2b92",
+    "content-hash": "b6b8fc2aaf68c64e07c7afadccb5c2cc",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -230,17 +230,74 @@
             "time": "2017-11-14T20:44:03+00:00"
         },
         {
+            "name": "laracasts/utilities",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                "reference": "68bdec0b1144e53c1d226e1b121c3ca221383f80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/68bdec0b1144e53c1d226e1b121c3ca221383f80",
+                "reference": "68bdec0b1144e53c1d226e1b121c3ca221383f80",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Utilities\\JavaScript\\JavaScriptServiceProvider"
+                    ],
+                    "aliases": {
+                        "JavaScript": "Laracasts\\Utilities\\JavaScript\\JavaScriptFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Laracasts\\Utilities\\JavaScript\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Transform your PHP to JavaScript",
+            "keywords": [
+                "javascript",
+                "laravel"
+            ],
+            "time": "2017-10-16T13:07:08+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "5.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c22ac4bcb9ed425d599827e89ba274c4ae58f6c9"
+                "reference": "6d1f0695a95a507772d205987895720341fd4d2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c22ac4bcb9ed425d599827e89ba274c4ae58f6c9",
-                "reference": "c22ac4bcb9ed425d599827e89ba274c4ae58f6c9",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6d1f0695a95a507772d205987895720341fd4d2d",
+                "reference": "6d1f0695a95a507772d205987895720341fd4d2d",
                 "shasum": ""
             },
             "require": {
@@ -361,7 +418,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-01-04T13:51:12+00:00"
+            "time": "2018-01-04T16:52:43+00:00"
         },
         {
             "name": "league/flysystem",
@@ -1301,12 +1358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "082dbb7531936f46be62390666fe559694175684"
+                "reference": "3a62e05dece9615446c6b6f30dd49b39306f8b49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/082dbb7531936f46be62390666fe559694175684",
-                "reference": "082dbb7531936f46be62390666fe559694175684",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/3a62e05dece9615446c6b6f30dd49b39306f8b49",
+                "reference": "3a62e05dece9615446c6b6f30dd49b39306f8b49",
                 "shasum": ""
             },
             "require": {
@@ -1381,7 +1438,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-03T17:14:19+00:00"
+            "time": "2018-01-04T15:43:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1866,7 +1923,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "laracasts/utilities": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
