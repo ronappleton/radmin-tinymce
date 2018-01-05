@@ -162,7 +162,7 @@ class TinyMceBuilder
             $counter++;
         }
 
-        return "external_plugins: {{$output}}";
+        return "external_plugins: { {$output} }";
     }
 
     private function get($what)

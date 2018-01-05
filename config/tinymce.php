@@ -53,7 +53,7 @@ return [
             "colorpicker",
             "textpattern",
             "codesample",
-            "fullpage",
+            //"fullpage", will add html to editor page;
             "toc",
             "spellchecker",
             "imagetools",
