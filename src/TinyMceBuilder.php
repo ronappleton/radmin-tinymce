@@ -2,8 +2,6 @@
 
 namespace RonAppleton\Radmin\TinyMce;
 
-use JavaScript;
-
 class TinyMceBuilder
 {
     private $config;

@@ -31,6 +31,7 @@ class ModuleServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishTinyMce();
+        $this->publishFileManager();
         $this->publishConfig();
     }
 
@@ -47,7 +48,10 @@ class ModuleServiceProvider extends ServiceProvider
             $this->packagePath('/public/filemanager') => public_path('/filemanager'),
         ]);
         $this->publishes([
-            $this->packagePath('/public/thumbs') => public_path('/vendor/thumbs'),
+            $this->packagePath('/public/thumbs') => public_path('/thumbs'),
+        ]);
+        $this->publishes([
+            $this->packagePath('/public/source') => public_path('/source'),
         ]);
     }
 
