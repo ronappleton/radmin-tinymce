@@ -84,7 +84,7 @@ return [
 
         "browser_spellcheck" => true,
 
-        "relative_urls" => true,
+        "relative_urls" => false,
 
         "remove_script_host" => true,
 
