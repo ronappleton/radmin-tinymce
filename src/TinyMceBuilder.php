@@ -23,23 +23,30 @@ class TinyMceBuilder
 
         $editorSetupScript .= $this->getTheme();
 
-        $editorSetupScript .= $this->getPlugins();
+        if($this->getReadonly() == 'false')
+        {
+            $editorSetupScript .= $this->getPlugins();
 
-        $editorSetupScript .= $this->getToolbar(1);
+            $editorSetupScript .= $this->getToolbar(1);
 
-        $editorSetupScript .= $this->getToolbar(2);
+            $editorSetupScript .= $this->getToolbar(2);
 
-        $editorSetupScript .= $this->getImageAdvtTab();
+            $editorSetupScript .= $this->getImageAdvtTab();
 
-        $editorSetupScript .= $this->getBrowserSpellCheck();
+            $editorSetupScript .= $this->getBrowserSpellCheck();
 
-        $editorSetupScript .= $this->getRelativeUrls();
+            $editorSetupScript .= $this->getRelativeUrls();
 
-        $editorSetupScript .= $this->getExternalFileManagerPath();
+            $editorSetupScript .= $this->getExternalFileManagerPath();
 
-        $editorSetupScript .= $this->getFileManagerTitle();
+            $editorSetupScript .= $this->getFileManagerTitle();
 
-        $editorSetupScript .= $this->getExternalPlugins();
+            $editorSetupScript .= $this->getExternalPlugins();
+        }
+        else {
+            $editorSetupScript .= "readonly: true, menubar: false, toolbar: false, statusbar: false";
+        }
+
 
         $script = "<script>var editor_config = {{$editorSetupScript}}; tinymce.init(editor_config);</script>";
 
@@ -178,5 +185,10 @@ class TinyMceBuilder
     private function getBool($value)
     {
         return $value == 1 || $value == 'true' ? 'true' : 'false';
+    }
+
+    private function getReadonly()
+    {
+        return $this->getBool($this->get('readonly'));
     }
 }
